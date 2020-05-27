@@ -4,7 +4,18 @@ export default class TextInput {
     this.resolve = () => {};
     this.HTMLElement.form.addEventListener("submit", (e) => {
       e.preventDefault();
-      this.resolve(HTMLElement.value);
+      let value = this.HTMLElement.value;
+      this.resolve(value);
+      this.HTMLElement.dispatchEvent(
+        new CustomEvent("data", { detail: value })
+      );
+    });
+  }
+
+  addEventListener(type, listener) {
+    this.HTMLElement.addEventListener(type, (e) => {
+      e.data = e.detail;
+      listener(e);
     });
   }
 

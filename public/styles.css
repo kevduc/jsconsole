@@ -27,7 +27,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  margin-bottom: 4em;
+  margin-bottom: 8%;
 }
 
 #display-outer-frame {
@@ -80,7 +80,8 @@ body {
   flex: 0 0 auto;
   display: flex;
   justify-content: stretch;
-  margin-top: 0.5em;
+  margin-top: 0.3em;
+  padding-right: 0.6em;
 }
 
 #input-carret {

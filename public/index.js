@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   const outputElement = document.querySelector("#output-text");
 
   myConsole = new Console(inputElement, outputElement);
+  myConsole.write("Hello World\n");
+  // myConsole.input.addEventListener("data", (e) => console.log(e.data));
   await run();
 });
 
 async function run() {
-  myConsole.write("Hello World\n");
-
   while (true) {
     let command = await myConsole.read();
 
