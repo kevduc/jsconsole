@@ -1,0 +1,114 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.console {
+  background-color: black;
+  color: #fefefe;
+  font-size: x-large;
+  font-family: monospace;
+}
+
+#console {
+  width: 60%;
+  height: 70%;
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-bottom: 4em;
+}
+
+#display-outer-frame {
+  height: 100%;
+  width: auto;
+  padding: 0.5em;
+  flex: 0 1 auto;
+  box-sizing: border-box;
+
+  border: 1px solid grey;
+  border-radius: 1em;
+}
+
+#display-inner-frame {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em 0.2em 0.5em 0.8em;
+  box-sizing: border-box;
+
+  border: 1px solid grey;
+  border-radius: 0.8em;
+}
+
+#output-display {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding-right: 0.6em;
+}
+
+.scroll {
+  overflow-y: auto;
+}
+
+#output-align {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#output-text {
+  flex: 0 0 auto;
+  overflow-wrap: break-word;
+}
+
+#input-form {
+  width: auto;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: stretch;
+  margin-top: 0.5em;
+}
+
+#input-carret {
+  flex: 0 0 auto;
+}
+
+#input-text {
+  min-width: 1em;
+  width: auto;
+  flex: 1 1 auto;
+  border: none;
+}
+
+#input-text:focus {
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 0.3em;
+  height: 0.3em;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 1em;
+  background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1em;
+  background-color: #fefefe;
+}

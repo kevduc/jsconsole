@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Console</title>
+    <script type="module" src="./index.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="console" class="console">
+      <div id="display-outer-frame">
+        <div id="display-inner-frame">
+          <div id="output-display" class="scroll">
+            <div id="output-align">
+              <div id="output-text"></div>
+            </div>
+          </div>
+          <form id="input-form" target="#" method="POST">
+            <span id="input-carret">>&nbsp;</span>
+            <input
+              autocomplete="off"
+              autofocus
+              class="console"
+              id="input-text"
+              name="input-text"
+              type="input-text"
+              placeholder=""
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
