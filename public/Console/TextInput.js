@@ -7,14 +7,14 @@ export default class TextInput {
       let value = this.HTMLElement.value;
       this.resolve(value);
       this.HTMLElement.dispatchEvent(
-        new CustomEvent("data", { detail: value })
+        new CustomEvent("newline", { detail: value })
       );
     });
   }
 
   addEventListener(type, listener) {
     this.HTMLElement.addEventListener(type, (e) => {
-      e.data = e.detail;
+      e.line = e.detail;
       listener(e);
     });
   }
@@ -27,5 +27,13 @@ export default class TextInput {
 
   clear() {
     this.HTMLElement.value = "";
+  }
+
+  set(value) {
+    this.HTMLElement.value = value;
+  }
+
+  get() {
+    return this.HTMLElement.value;
   }
 }
