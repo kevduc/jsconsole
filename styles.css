@@ -13,7 +13,7 @@ body {
   background-color: black;
 }
 
-.console {
+.text-console {
   background-color: black;
   color: #fefefe;
   font-size: x-large;
@@ -38,7 +38,7 @@ body {
   box-sizing: border-box;
 
   border: 1px solid grey;
-  border-radius: 1em;
+  border-radius: 1.2em;
 }
 
 #display-inner-frame {

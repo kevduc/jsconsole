@@ -5,15 +5,13 @@ export default class Console {
   constructor(inputElement, outputElement) {
     this.input = new TextInput(inputElement);
     this.output = new TextOutput(outputElement);
+    this.scrollElement = outputElement.closest(".scroll");
     this.buffer = "";
   }
 
   refresh() {
     this.output.show(this.buffer);
-    this.output.HTMLElement.closest(".scroll").scroll(
-      0,
-      this.output.HTMLElement.scrollHeight
-    );
+    this.scrollElement.scroll(0, this.output.HTMLElement.scrollHeight);
   }
 
   clear() {
