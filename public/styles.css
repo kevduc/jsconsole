@@ -27,7 +27,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  margin-bottom: 8%;
+  margin-bottom: 5%;
 }
 
 #display-outer-frame {
