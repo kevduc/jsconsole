@@ -1,13 +1,19 @@
 {
   "name": "jsconsole",
   "version": "1.0.0",
-  "description": "",
+  "description": "Basic js console in js, jsception",
   "main": "index.html",
   "scripts": {
-    "start": "http-server -c-1"
+    "start": "http-server -o -c-1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "js",
+    "javascript",
+    "console",
+    "inception",
+    "cmd"
+  ],
+  "author": "kevduc",
   "license": "ISC",
   "dependencies": {}
 }
