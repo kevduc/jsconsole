@@ -1,6 +1,6 @@
 import Console from './Console/Console.js'
 
-let myConsole = null
+let jsconsole = null
 let commandHistory = ['']
 let commandHistoryCursor = 0
 
@@ -8,20 +8,20 @@ document.addEventListener('DOMContentLoaded', async () => {
   const inputElement = document.querySelector('#input-text')
   const outputElement = document.querySelector('#output-text')
 
-  myConsole = new Console(inputElement, outputElement)
-  // myConsole.write("Hello World\n");
-  // myConsole.input.addEventListener("newline", (e) => console.debug(e.line));
+  jsconsole = new Console(inputElement, outputElement)
+  // jsconsole.write("Hello World\n");
+  // jsconsole.input.addEventListener("newline", (e) => console.debug(e.line));
 
-  myConsole.input.addEventListener('input', (e) => {
+  jsconsole.input.addEventListener('input', (e) => {
     commandHistoryCursor = commandHistory.length - 1
   })
 
-  myConsole.input.addEventListener('keyup', (e) => {
+  jsconsole.input.addEventListener('keyup', (e) => {
     if (e.key == 'c' && e.ctrlKey) {
       // Ctrl + C
       commandHistoryCursor = commandHistory.length - 1
       commandHistory[commandHistoryCursor] = ''
-      myConsole.input.set(commandHistory[commandHistoryCursor])
+      jsconsole.input.set(commandHistory[commandHistoryCursor])
     }
 
     // Up and Down arrow keys to navigate command history
@@ -37,11 +37,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     if ((commandHistoryCursor == 0 && direction == -1) || (commandHistoryCursor == commandHistory.length - 1 && direction == 1))
       return
 
-    if (commandHistoryCursor == commandHistory.length - 1) commandHistory[commandHistoryCursor] = myConsole.input.get()
+    if (commandHistoryCursor == commandHistory.length - 1) commandHistory[commandHistoryCursor] = jsconsole.input.get()
 
     commandHistoryCursor += direction
-    myConsole.input.set('') // move cursor to the end
-    myConsole.input.set(commandHistory[commandHistoryCursor])
+    jsconsole.input.set('') // move cursor to the end
+    jsconsole.input.set(commandHistory[commandHistoryCursor])
   })
 
   await run()
@@ -49,25 +49,25 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 async function run() {
   while (true) {
-    let command = await myConsole.read()
+    let command = await jsconsole.read()
 
     commandHistory[commandHistory.length - 1] = command
     commandHistory.push('')
     commandHistoryCursor = commandHistory.length - 1
-    myConsole.write(`> ${command}\n`)
+    jsconsole.write(`> ${command}\n`)
 
     switch (command) {
       case '':
         break
       case 'clear':
-        myConsole.clear()
+        jsconsole.clear()
         break
       default:
         try {
-          myConsole.write(`${eval(command)}\n`)
+          jsconsole.write(`${eval(command)}\n`)
         } catch (err) {
-          myConsole.write(`${err}\n`)
-          // myConsole.write(`Err: Command '${command}' not recognized.\n`);
+          jsconsole.write(`${err}\n`)
+          // jsconsole.write(`Err: Command '${command}' not recognized.\n`);
         }
         break
     }
