@@ -1,3 +1,10 @@
+*,
+*::before,
+*::after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 html {
   height: 100%;
 }
@@ -14,13 +21,13 @@ body {
 }
 
 .text-console {
-  background-color: black;
   color: #fefefe;
   font-size: x-large;
   font-family: monospace;
 }
 
 #console {
+  --bg-color: black;
   width: 60%;
   height: 70%;
   flex: 0 1 auto;
@@ -31,6 +38,7 @@ body {
 }
 
 #display-outer-frame {
+  background-color: var(--bg-color);
   height: 100%;
   width: auto;
   padding: 0.5em;
@@ -89,6 +97,7 @@ body {
 }
 
 #input-text {
+  background-color: var(--bg-color);
   min-width: 1em;
   width: auto;
   flex: 1 1 auto;
