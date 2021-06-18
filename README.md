@@ -1,6 +1,6 @@
 # jsconsole
 
-👨‍💻 Basic js console in js, _jsception_
+⬛ Basic js console in js, _jsception_
 
 👉 Try it here: [kevduc.github.io/jsconsole](https://kevduc.github.io/jsconsole)
 
